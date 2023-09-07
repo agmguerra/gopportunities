@@ -8,6 +8,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BasePath /api/v1
+// @Sumary Update Opening
+// @Description Update a new job opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening id"
+// @Param request body UpdateOpeningRequest true "Request body"
+// @Success 200 {object} UpdateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [put]
 func populateOpeningForUpdate(o *schemas.Opening, r *UpdateOpeningRequest) {
 	if r.Role != "" {
 		o.Role = r.Role
